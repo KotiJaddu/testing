@@ -1,5 +1,6 @@
 import random
 from collections import deque
+from typing import List
 
 import torch
 import torch.nn.functional as F
@@ -40,7 +41,7 @@ class ReplayBuffer():
         return random.sample(self.buffer, batch_size)
 
 class DQN(nn.Module):
-    def __init__(self, layer_sizes:list[int], activation_function="relu"):
+    def __init__(self, layer_sizes:List[int], activation_function="relu"):
         """
         DQN initialisation
 
